@@ -54,7 +54,7 @@ const Mycalculator: React.FC<{}> = ({}) => {
       );
     }
   };
-  // 提现( 能否交易 =》 进行交易会把免额用完？ =》 存入交易订单 )
+  // 提现( 能否交易 =》 进行交易会把免额用完？ =》 存入交易订单  )
   const drawMoney = (drawAllMoney: boolean = false) => {
     let manage = new tradeControl(
       restMoney,

@@ -17,7 +17,7 @@ class tradeControl {
     this.freeTip = freeTip;
     this.isdrawAllMoney = isdrawAllMoney;
   }
-  // 想取钱
+  // 想取钱多少
   IwantDraw(): number {
     return this.isdrawAllMoney ? this.restMoney : this.input;
   }
