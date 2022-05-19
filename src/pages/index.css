@@ -1,6 +1,11 @@
 .title {
-  background: #79f29d;
+  background: #f5faf6;
 }
 body {
   background-color: #f4f5f7;
+}
+#outerWay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

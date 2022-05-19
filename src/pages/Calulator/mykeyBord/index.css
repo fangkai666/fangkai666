@@ -1,16 +1,21 @@
 .keybord {
-  width: 355px;
-  height: 260px;
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+  width: 424px;
+  height: 340px;
   display: flex;
   border: 1px solid #ccc;
 }
 .keybord .number {
-  width: 262px;
+  width: 310px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .keybord .number > div {
-  line-height: 50px;
+  line-height: 84.5px;
   font-size: 24px ;
   font-weight: 600;
   text-align: center;
@@ -37,6 +42,9 @@
   line-height: 64.5px;
   text-align: center;
 }
+.keybord .getMoney .clearTop > img {
+  width: 36px;
+}
 .keybord .getMoney .clearTop:hover {
   background-color: #f7f8fa;
 }
@@ -50,4 +58,12 @@
 .keybord .getMoney .buttonDisabled {
   background-color: #f7f8fa;
   color: #dfe0e2;
+}
+.showKeybord {
+  bottom: 40px;
+  transition: all 0.4s ease-in-out;
+}
+.hideKeybord {
+  bottom: -100%;
+  transition: all 0.3s ease-in-out;
 }

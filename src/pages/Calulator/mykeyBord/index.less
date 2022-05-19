@@ -1,54 +1,69 @@
-.keybord{
-    width: 355px;
-    height: 260px;
+.keybord {
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+  width: 424px;
+  height: 340px;
+  display: flex;
+  border: 1px solid #ccc;
+  .number {
+    width: 310px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    > div {
+      line-height: 84.5px;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid #c0d8d8;
+    }
+    > div:hover {
+      background-color: #f7f8fa;
+    }
+    .lastDot {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+    .zero {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+  .getMoney {
+    flex: 1;
     display: flex;
-    border: 1px solid #ccc;
-    .number{
-        width: 262px;
-        display: grid;
-        grid-template-columns:repeat(3,1fr);
-        >div{
-            line-height: 50px;
-            font-size:24px ;
-            font-weight: 600;
-            text-align: center;
-            border: 1px solid #c0d8d8;
-        }
-        >div:hover{
-           background-color:#f7f8fa;
-        }
-        .lastDot{
-            grid-column-start: 3;
-            grid-column-end: 4;
-        }
-        .zero{
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-        
+    flex-direction: column;
+    .clearTop {
+      height: 64.5px;
+      line-height: 64.5px;
+      text-align: center;
+      > img {
+        width: 36px;
+      }
     }
-    .getMoney{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        .clearTop{
-           height: 64.5px; 
-           line-height: 64.5px;
-           text-align: center;
-        }
-        .clearTop:hover{
-            background-color: #f7f8fa;
-         }
-        .button{
-            flex:1;
-            background-color: #1678ff;
-            line-height:193.5px;
-            text-align: center;
-            color: #fff;
-        }
-        .buttonDisabled{
-            background-color: #f7f8fa;
-            color: #dfe0e2;
-        }
+    .clearTop:hover {
+      background-color: #f7f8fa;
     }
+    .button {
+      flex: 1;
+      background-color: #1678ff;
+      line-height: 193.5px;
+      text-align: center;
+      color: #fff;
+    }
+    .buttonDisabled {
+      background-color: #f7f8fa;
+      color: #dfe0e2;
+    }
+  }
+}
+.showKeybord {
+  bottom: 40px;
+  transition: all 0.4s ease-in-out;
+}
+.hideKeybord {
+  bottom: -100%;
+  transition: all 0.3s ease-in-out;
 }
