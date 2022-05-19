@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const sleep = (await) => {
+        //     return new Promise(resolve => setTimeout(resolve, await));
+        // }
+        // const getNumber = async () => {
+        //     await sleep(2000);
+        //     console.log(111);
+        // }
+        // getNumber();
+
+        // const arr = [1, [2, 3, [4, 5]]];
+        // const getflat = (arr) => {
+        //     const temp = [];
+        //     function step(arr) {
+        //         arr.forEach(ele => {
+        //             if (Array.isArray(ele)) {
+        //                 step(ele);
+        //             } else {
+        //                 temp.push(ele);
+        //             }
+        //         });
+        //     }
+        //     step(arr);
+        //     return temp;
+        // }
+        // function flatten(arr) {
+        //     return arr.toString().split(',').map(function (item) {
+        //         return Number(item);
+        //     })
+        // }
+        // console.log(flatten(arr));
+        // console.log(getflat(arr));
+        // function PromiseAll() {
+        // }
+        // let obj = {
+        //     name: "一个"
+        // }
+        // function allName(firstName, lastName) {
+        //     console.log(this)
+        //     console.log(`我的全名是“${firstName}${this.name}${lastName}”`)
+        // }
+        // console.log(allName('ff', 'last'));
+
+        // let Person = {
+        //     name: 'Tom',
+        //     say() {
+        //         console.log(this)
+        //         console.log(`我叫${this.name}`)
+        //     }
+        // }
+        // Person1 = {
+        //     name: 'Tom1'
+        // }
+        // Function.prototype.MyCall = function (context) {
+        //     //context就是demo中的Person1
+        //     // 必须此时调用MyCall的函数是say方法，那么我们只需要在context上扩展一个say方法指向调用MyCall的say方法这样this
+        //     context = context || windows;
+        //     let args = [...arguments].slice(1);
+        //     context.fn = this;
+        //     //Mycall里边的this就是我们虚拟的say方法
+        //     context.fn(...args);
+        //     delete context.fn;
+        // }
+        // // 测试
+        // //我叫Tom1  
+        // Person.say.MyCall(Person1);
+        // function create(fn, ...args) {
+        //     let obj = Object.create(fn.prototype);
+        //     // let obj={}
+        //      const ret= fn.call(obj, ...args);
+        //     return ret instanceof Object?ret:obj
+        // }
+        // function Person(name, age) {
+        //     this.name = name, this.age = age;
+        // }
+        // let obj=create(Person,'张三',25);
+        // console.log(obj);
+
+        // var p1 = Promise.resolve(1),
+        //     p2 = Promise.resolve(2),
+        //     p3 = Promise.resolve(3);
+        // const promises = [p1, p2, p3];
+        // function promiseAll(promises) {
+        //     return new Promise(function (resolve, reject) {
+        //         if (!Array.isArray(promises)) {
+        //             return reject(new TypeError('arguments must be an array'));
+        //         }
+        //         var resolvedCounter = 0;
+        //         var promiseNum = promises.length;
+        //         var resolvedValues = new Array(promiseNum);
+        //         for (let i = 0; i < promiseNum; i++) {
+        //             Promise.resolve(promises[i]).then(function (value) {
+        //                 resolvedCounter++
+        //                 resolvedValues[i] = value
+        //                 if (resolvedCounter == promiseNum) {
+        //                     return resolve(resolvedValues)
+        //                 }
+        //             }, function (reason) {
+        //                 return reject(reason)
+        //             })
+        //         }
+        //     })
+        // }
+        // promiseAll(promises).then((res) => {
+        //     console.log(res);
+        // });
+        // MyPromise.any = function (promises) {
+        //     return new Promise((resolve, reject) => {
+        //         promises = Array.isArray(promises) ? promises : []
+        //         let len = promises.length
+        //         // 用于收集所有 reject 
+        //         let errs = []
+        //         // 如果传入的是一个空数组，那么就直接返回 AggregateError
+        //         if (len === 0) return reject(new AggregateError('All promises were rejected'))
+        //         promises.forEach((promise) => {
+        //             promise.then(value => {
+        //                 resolve(value);
+        //             }, err => {
+        //                 len--;
+        //                 errs.push(err);
+        //                 if (len === 0) {
+        //                     reject(new AggregateError(errs));
+        //                 }
+        //             })
+        //         })
+        //     })
+        // }
+        // function MyPromiseAny(promises) {
+        //     return new Promise(
+        //         (resolve, reject) => {
+        //             promises = Array.isArray(promises) ? promises : [];
+        //             let len = promises.length;
+        //             let errArr = [];
+        //             if (len === 0) return reject(new AggregateError('所有结束'));
+        //             promises.forEach(promise => {
+        //                 promise.then((res) => {
+        //                     resolve(res);
+        //                 }, err => {
+        //                     len--;
+        //                     errArr.push(err);
+        //                     if (len === 0) {
+        //                         reject(new AggregateError('err'));
+        //                     }
+        //                 })
+        //             });
+        //         }
+        //     )
+        // }
+        // let arr1 = [1, 2, { val: 4, xdm: { dd: 99 } }];
+        // function deepClone(target) {
+        //     if (typeof target === 'object' && target !== null) {
+        //         const newTarget = Array.isArray(target) ? [] : {};
+        //         for (const key in target) {
+        //             if (Object.hasOwnProperty.call(target, key)) {
+        //                 newTarget[key] = (typeof target[key] === 'object') ? deepClone(target[key]) : target[key];
+        //             }
+        //         }
+        //         return newTarget;
+        //     } else {
+        //         return target;
+        //     }
+        // }
+        // console.log(deepClone(arr1));
+        // const eventHub = {
+        //     map: {},
+        //     on: function (name, fn) {
+        //         eventHub.map[name] = eventHub.map[name] || []
+        //         eventHub.map[name].push(fn)
+        //     },
+        //     emit: function (name, data) {
+        //         const q = eventHub.map[name]
+        //         if (!q) return
+        //         q.map(fn => fn.call(undefined, data))
+        //     },
+        //     off: function (name, fn) {
+        //         const q = eventHub.map[name]
+        //         if (!q) return
+        //         const index = q.indexOf(fn)
+        //         if (index < 0) return
+        //         q.splice(index, 1)
+        //     }
+        // }
+        // const arrFlat = [1, 2, [3, 4, [5, 6]]];
+        // const flatArr = (arrFlat) => {
+        //     let result = [];
+        //     arrFlat.forEach(ele => {
+        //         if (Array.isArray(ele)) {
+        //             result = result.concat(flatArr(ele));
+        //         } else {
+        //             result.push(ele);
+        //         }
+        //     });
+        //     return result;
+        // }
+        // console.log(flatArr(arrFlat));
+    </script>
+</body>
+
+</html>

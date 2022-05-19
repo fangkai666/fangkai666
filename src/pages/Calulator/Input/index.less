@@ -1,0 +1,74 @@
+.onuter {
+    width: 424px;
+    height: 213px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px rgb(247, 244, 244);
+    border-radius: 10px;
+    .title {
+        color: #88898b;
+        text-indent: 0.5em;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid rgb(247, 244, 244);
+    }
+    .userInput {
+        display: flex;
+        height: 80px;
+        border-bottom: 1px solid rgb(247, 244, 244);
+        position: relative;
+        line-height: 80px;
+        overflow: hidden;
+        .pre {
+            width: 48px;
+            font-size: 25px;
+        }
+
+        input {
+            flex: 1;
+            font-size: 38px;
+            outline: none;
+            border: none;
+            caret-color:#66a0d7;
+        }
+
+        .clear {
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            height: 24px;
+            line-height: 18px;
+            text-align: center;
+            width: 24px;
+            font-size: 20px;
+            color: #bcbdbf;
+            border: 1px solid #bcbdbf ;
+            border-radius: 50%;
+        }
+        .hasClear{
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            // z-index: 66;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 30px;
+            >div:first-child{
+                color: #7bb2e0;
+                height: 20px;
+            }
+        }
+        .clear:hover{
+            color: black;
+            border: 1px solid black;
+        }
+
+    }
+    .footer{
+        height: 100%;
+        line-height: 72px;
+        text-indent: 1em;
+    }
+}

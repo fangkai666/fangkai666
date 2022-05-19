@@ -1,0 +1,53 @@
+.keybord {
+  width: 355px;
+  height: 260px;
+  display: flex;
+  border: 1px solid #ccc;
+}
+.keybord .number {
+  width: 262px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.keybord .number > div {
+  line-height: 50px;
+  font-size: 24px ;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #c0d8d8;
+}
+.keybord .number > div:hover {
+  background-color: #f7f8fa;
+}
+.keybord .number .lastDot {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.keybord .number .zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.keybord .getMoney {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.keybord .getMoney .clearTop {
+  height: 64.5px;
+  line-height: 64.5px;
+  text-align: center;
+}
+.keybord .getMoney .clearTop:hover {
+  background-color: #f7f8fa;
+}
+.keybord .getMoney .button {
+  flex: 1;
+  background-color: #1678ff;
+  line-height: 193.5px;
+  text-align: center;
+  color: #fff;
+}
+.keybord .getMoney .buttonDisabled {
+  background-color: #f7f8fa;
+  color: #dfe0e2;
+}
