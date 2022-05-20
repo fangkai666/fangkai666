@@ -67,7 +67,7 @@ const KeyBord: React.FC<Iprops> = ({
               className="clearTop"
               onClick={() => setClearInputValue(`${inputValue.slice(0, -1)}`)}
             >
-              <img src={logo} />{' '}
+              <img src={logo} />
             </div>
             <div
               className="button"

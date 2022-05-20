@@ -28,7 +28,7 @@ const strategies = {
     }
   },
   overFreeTip: function (inputValue: number, freeTip: number) {
-    if (freeTip >= 0 && freeTip > inputValue) {
+    if (freeTip > inputValue) {
       return (
         <div>{`免费额度剩余${freeTip - inputValue}，超出收0.1%服务费 ！`}</div>
       );
@@ -106,7 +106,6 @@ const UserInput: React.FC<Iprops> = ({
                   fontSize: '16px',
                 }}
               >
-                {' '}
                 {'￥' + resMoney}
               </div>
             </div>

@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import clear from '../../../assets/取消.png';
-type Iprops = {
-  setShow: Function;
-  realMoney: number;
-};
+type Iprops = Omit<IModalprops, 'show'>;
 const DialogModal = ({ setShow, realMoney }: Iprops) => {
   const Wrap = styled.div`
     position: absolute;

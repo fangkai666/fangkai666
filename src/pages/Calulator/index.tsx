@@ -79,7 +79,6 @@ const Mycalculator: React.FC<{}> = ({}) => {
       setRealMoney(realGet);
       getIntoPayedList(realGet, manage.returnConstTip());
     }
-
     setRestMoney(restMoney - money);
     // 打开弹窗 1s关闭
     setShow(true);
